@@ -1,9 +1,9 @@
 export default function Header() {
     return(
        <ul>
-        <li>Home</li>
-        <li>Home</li>
-        <li>Home</li>
+        <li>Header</li>
+        <li>Header</li>
+        <li>Header</li>
        </ul>
     )
 }
