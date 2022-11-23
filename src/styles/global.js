@@ -17,7 +17,7 @@ p {
 }
 h1,h2,h3,h4 {
   
-  color: ${colors.testTomato};
+  color: ${colors.textPrimary};
 }
 
       @media (max-width: 1720px) {

@@ -1,17 +1,27 @@
 import React from "react";
 import * as S from "./styles.js";
 
-export default function Input(props, className, type, name, id, placeholder) {
+export default function Input({
+  type,
+  name,
+  id,
+  placeholder,
+  value,
+  onChange
+   
+}) {
   return (
     <>
       <S.Input>
         <input
-          className={className}
           type={type}
           name={name}
           id={id}
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
         />
+         
       </S.Input>
     </>
   );
