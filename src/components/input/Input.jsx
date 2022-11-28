@@ -7,13 +7,14 @@ export default function Input({
   id,
   placeholder,
   value,
-  onChange
-   
+  onChange,
+  autoComplete,
 }) {
   return (
     <>
       <S.Input>
         <input
+          autoComplete={autoComplete}
           type={type}
           name={name}
           id={id}
@@ -21,7 +22,6 @@ export default function Input({
           value={value}
           onChange={onChange}
         />
-         
       </S.Input>
     </>
   );

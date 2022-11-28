@@ -1,4 +1,6 @@
-import Home from "./Home/Home";
-import Login from "./Login/Login";
+import Home from "./Home/";
+import Login from "./Login/";
+import Register from "./Register";
+import RememberPassword from "./RememberPassword";
 
-export { Home,Login };
+export { Home, Login, RememberPassword, Register };
