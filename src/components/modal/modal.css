@@ -1,0 +1,89 @@
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ p {
+    color: #6F6D79;
+    
+    
+}
+.modal-overlay {
+    background-color: #181818a5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    background-color: white;
+    border-radius: 5px;
+
+}
+
+hr {
+    width: 100%;
+}
+
+.modal-header {
+    padding-top: 1.6625rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.modal-header h2 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1.6625rem;
+    font-weight: bold;
+    color: #3B3B3B;
+    font-size: 24px;
+
+}
+
+.svg-close-btn {
+    background-color: transparent;
+    border: none;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.paragraph {
+
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-content {
+    width: 100%;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+span {
+
+    margin-left: 5.5rem;
+    margin-right: -6rem;
+    margin-top: 4px;
+    
+}
+
+.btn-modal {   
+    margin-top: -1.5rem !important;
+}

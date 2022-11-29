@@ -1,19 +1,25 @@
-import { useState } from "react";
 import { Navigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "../../services/api";
-import { useRef, useEffect, useContext } from "react";
+import { useRef, useEffect, useContext, useState } from "react";
 import AuthContext from "../../context/AuthProvider";
 import * as S from "./styles.js";
 import Input from "../input/Input";
 import Button from "../button/Button.jsx";
 import { Home } from "../../pages";
+import Modal from "react-modal";
+import MyModal from "../modal/MyModal";
 
 const LOGIN_URL = "/v1/login";
+const RETRIEVE_URL = "/v1/forgot-password";
+
+Modal.setAppElement("#root");
 
 export default function LoginForm() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { setAuth } = useContext(AuthContext);
+  const [retrieveEmail, setRetrieveEmail] = useState("");
 
   const userRef = useRef();
   const errRef = useRef();
@@ -76,8 +82,56 @@ export default function LoginForm() {
     console.log("User : ", user);
     console.log("Pwd : ", pwd);
   };
+
+  const onSendRetrievePass = async (e) => {
+    e.preventDefault();
+    console.log(retrieveEmail);
+    try {
+      const response = await axios.post(
+        RETRIEVE_URL,
+        JSON.stringify({ email: retrieveEmail }),
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+
+      setRetrieveEmail("");
+
+      setIsModalOpen(false);
+    } catch (err) {
+      if (!retrieveEmail) {
+        toast.error("Insira um e-mail valido!");
+      } else {
+        toast.error("Recuperação falhou!");
+      }
+      errRef.current.focus();
+    }
+  };
+  function closeModal() {
+    setIsModalOpen(false);
+  }
+
   return (
     <>
+      <>
+        {isModalOpen ? (
+          <MyModal
+            isOpen={isModalOpen}
+            onRequestClose={closeModal}
+            title="Problemas para entrar?"
+            InputPlaceHolder="E-mail"
+            InputValue={retrieveEmail}
+            onInputChange={(e) => setRetrieveEmail(e.target.value)}
+            onSendClick={onSendRetrievePass}
+            buttonContext="Enviar link para redefinir"
+            footerTip="Não conseguiu redefinir sua senha ?"
+            content="Insira o seu e-mail e enviaremos um link para você voltar a acessar a sua conta novamente"
+          />
+        ) : null}
+      </>
       <S.WelcomeMessage>
         <h3>Bem vindo novamente!</h3>
         <p>Informe seu usuário e senha para acessar</p>
@@ -116,8 +170,15 @@ export default function LoginForm() {
             <input type="checkbox" name="checkbox" id="checkbox" />
             <label htmlFor="checkbox">Lembrar senha</label>
           </S.RememberPassword>
-
-          <a href="/lembrar-senha"> Esqueceu a senha ?</a>
+          <S.BtnAlert>
+            <button
+              className="btn-alert"
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+            >
+              <p>Esqueceu a senha ?</p>
+            </button>
+          </S.BtnAlert>
         </S.PasswordContent>
 
         <Button>ENTRAR</Button>

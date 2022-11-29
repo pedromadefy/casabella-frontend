@@ -66,3 +66,15 @@ export const WelcomeMessage = styled.div`
     margin-bottom: 2.5rem;
   }
 `;
+
+export const BtnAlert = styled.div`
+  button {
+    border: none;
+    background: transparent;
+  }
+  p {
+    color: #dd1650;
+    font-size: 16px;
+  }
+`;
+ 
