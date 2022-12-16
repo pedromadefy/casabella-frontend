@@ -1,0 +1,32 @@
+.description-step {
+    color: gray;
+}
+
+.step-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 4.1875rem;
+    color: #fff;
+
+    width: 2.625rem;
+    height: 2.625rem;
+    border-radius: 50%;
+    background-color: tomato;
+}
+
+.step-item::after {
+    z-index: -1;
+    content: '';
+    color: tomato;
+     
+}

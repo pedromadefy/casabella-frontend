@@ -1,0 +1,12 @@
+.menu-icons ul {
+    margin-left: 8rem;
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: center;
+    align-items: space-between;
+    text-align: center;
+}
+.menu-icons li{
+   margin: 1rem;
+}

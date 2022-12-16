@@ -7,6 +7,7 @@ export const Input = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1.25rem;
+  
   input {
     font-size: 17px;
     color: #6f6d79;
@@ -15,5 +16,6 @@ export const Input = styled.div`
     border-radius: 5px;
     border: 0.75px solid #d0d1d5;
     background-color: #f6fafd;
+    
   }
 `;
