@@ -10,6 +10,7 @@ import Button from "../button/Button.jsx";
 import { Home } from "../../pages";
 import Modal from "react-modal";
 import MyModal from "../modal/MyModal";
+import Terms from "../../pages/MainTerms/MainTerms";
 
 const LOGIN_URL = "/v1/login";
 const RETRIEVE_URL = "/v1/forgot-password";
@@ -37,11 +38,14 @@ export default function LoginForm() {
   }, [user, pwd]);
 
   if (success) {
-    return <Navigate to="/home" component={<Home />} />;
+    return <Navigate to="/terms" component={<Terms />} />;
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //TODO: remover esse seT(true), está assim apenas por um erro de conexão com db
+    setSuccess(true);
 
     try {
       const response = await axios.post(

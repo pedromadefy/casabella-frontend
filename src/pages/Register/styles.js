@@ -31,10 +31,27 @@ export const WelcomeMessage = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  white-space: nowrap;
+
   margin-bottom: 1.875rem;
+  h1 {
+    font-size: 1.25rem;
+    color: #3b3b3b;
+  }
+  p {
+    margin-top: 1.4375rem;
+    color: #6f6d79;
+    font-size: 16px;
+  }
 `;
 export const CancelContent = styled.div`
   margin-top: 2rem;
+  button {
+    background-color: transparent;
+    border: none;
+    color: #6f6d79;
+    text-decoration: 1px underline;
+  }
 `;
 export const RangeSliderStepOne = styled.div`
   width: 100%;
@@ -49,12 +66,13 @@ export const RangeSliderStepOne = styled.div`
   outline: none; /* Remove outline */
   ::before {
     content: "";
-    background:linear-gradient(90deg, rgba(230,78,51,1) 20%, rgba(208,209,213,1) 20%);
-  ;
+    background: linear-gradient(
+      90deg,
+      rgba(230, 78, 51, 1) 20%,
+      rgba(208, 209, 213, 1) 20%
+    );
     width: 80%;
     height: 2px;
-
-  
   }
 `;
 export const RangeSliderStepTwo = styled.div`
@@ -70,12 +88,13 @@ export const RangeSliderStepTwo = styled.div`
   outline: none; /* Remove outline */
   ::before {
     content: "";
-    background:linear-gradient(90deg, rgba(230,78,51,1) 50%, rgba(208,209,213,1) 50%);
-  ;
+    background: linear-gradient(
+      90deg,
+      rgba(230, 78, 51, 1) 50%,
+      rgba(208, 209, 213, 1) 50%
+    );
     width: 80%;
     height: 2px;
-
-  
   }
 `;
 export const RangeSliderStepThree = styled.div`
@@ -91,12 +110,13 @@ export const RangeSliderStepThree = styled.div`
   outline: none; /* Remove outline */
   ::before {
     content: "";
-    background:linear-gradient(90deg, rgba(230,78,51,1) 80%, rgba(208,209,213,1) 80%);
-  ;
+    background: linear-gradient(
+      90deg,
+      rgba(230, 78, 51, 1) 80%,
+      rgba(208, 209, 213, 1) 80%
+    );
     width: 80%;
     height: 2px;
-
-  
   }
 `;
 export const RangeSliderStepFour = styled.div`
@@ -112,12 +132,13 @@ export const RangeSliderStepFour = styled.div`
   outline: none; /* Remove outline */
   ::before {
     content: "";
-    background:linear-gradient(90deg, rgba(230,78,51,1) 100%, rgba(208,209,213,1) 0%);
-  ;
+    background: linear-gradient(
+      90deg,
+      rgba(230, 78, 51, 1) 100%,
+      rgba(208, 209, 213, 1) 0%
+    );
     width: 80%;
     height: 2px;
-
-  
   }
 `;
 
@@ -147,5 +168,98 @@ export const SliderStep = styled.div`
     height: 2.625rem;
     border-radius: 50%;
     background-color: #e64e33;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  width: 450px;
+  height: 210px;
+  background-color: #f6fafd;
+  border: 1px dashed #d0d1d5;
+  cursor: pointer;
+
+  h4 {
+    color: #3b3b3b;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  p {
+    color: #6f6d79;
+    font-size: 12px;
+  }
+`;
+
+export const RadialImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 450px;
+  height: 210px;
+  background-color: #f6fafd;
+  border: 1px dashed #d0d1d5;
+  cursor: pointer;
+
+  h4 {
+    color: #3b3b3b;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  p {
+    color: #6f6d79;
+    font-size: 12px;
+  }
+`;
+
+export const VerifiedIconContainer = styled.div`
+  width: 186px;
+  height: 186px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #e64e33;
+  margin-bottom: 2.4375rem;
+  div {
+    color: #fff;
+  }
+`;
+
+export const ProfileContainer = styled.div`
+  width: 204px;
+  margin: 0 auto;
+  height: 204px;
+  border: 1px dashed #e64e33;
+  flex-direction: column;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  svg {
+    width: 400px;
+  }
+`;
+export const Dflex = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+`;
+export const ButtonTransparent = styled.div`
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 `;
