@@ -1,6 +1,6 @@
 import React  from "react";
 import * as S from "./styles.js";
-export default function Button({props,type,children, onClick, onSubmit}) {
+export default function Button({props,className,type,children, onClick, onSubmit}) {
   return (
     <>
       <S.ButtonContainer>
@@ -8,6 +8,7 @@ export default function Button({props,type,children, onClick, onSubmit}) {
         type={type}
         onSubmit={onSubmit}
         onClick={onClick}
+        className={className}
         >
           {children}
          
